@@ -3,18 +3,18 @@ Gvien('the URL https://the-internet.herokuapp.com/login') => {
     driver.goTo('https://the-internet.herokuapp.com/login');
 }
 
-
-
-
 Given('the $String credentials for the login ')(String credentials) => {
-    if (credentials == 'valid') {
+    if (credentials == "valid") {
         // Set up valid credentials
         this.username.secret = 'tomsmith';
         this.password.secret = 'SuperSecretPassword!';
-    } if (credentials == 'invalid') {
+    } else if (credentials == "invalid") {
         // Set up invalid credentials
         this.username.secret = 'invalidUser';
         this.password.secret = 'invalidPassword';
+    } else {
+        //blank
+        console.log('Please put a value into the inputs');
     }
 }
 
